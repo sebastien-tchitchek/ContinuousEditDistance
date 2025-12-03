@@ -1,0 +1,126 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy
+        name="ttkTimeVaryingPersistenceDiagramDistanceMatrix"
+        class="ttkTimeVaryingPersistenceDiagramDistanceMatrix"
+        label="TTK TimeVaryingPersistenceDiagramDistanceMatrix">
+      <Documentation
+          long_help="Computes distance matrix between time varying persistence diagrams."
+          shorthelp="Time varying persistence diagrams distance matrix."
+          >
+        This filter computes a distance matrix between an input set of
+        time varying persistence diagrams.
+
+        Related publication: "XXX"
+        Sebastien Tchitchek, Julien Tierny
+
+        See also TTK PersistenceDiagramClustering        
+        
+        Online examples:
+        
+        - https://topology-tool-kit.github.io/examples/YYY
+      </Documentation>
+
+      <InputProperty
+          name="Input"
+          command="AddInputConnection"
+          clean_command="RemoveAllInputs"
+          multiple_input="1">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkMultiBlockDataSet"/>
+        </DataTypeDomain>
+        <InputArrayDomain name="input_scalars" number_of_components="1">
+          <Property name="Input" function="FieldDataSelection" />
+        </InputArrayDomain>
+        <Documentation>
+          Data-set to process.
+        </Documentation>
+      </InputProperty>
+
+	<StringVectorProperty 
+          name="TimestepColumnNames" 
+	  label="Time steps column name" 
+   	  animateable="0" 
+	  command="SetTimestepColumnName" 
+	  number_of_elements="1" 
+	  default_values="TimeStep">
+        <Documentation>Column that contain time steps of the persistence diagrams.</Documentation>
+        </StringVectorProperty>
+
+
+	<IntVectorProperty
+	name="Distance"
+	label="Distance"
+	command="SetDistance"
+	number_of_elements="1"
+	default_values="1">
+	<EnumerationDomain name="enum">
+	    <Entry value="1" text="CGED"/>
+	    <Entry value="2" text="DTW"/>
+	    <Entry value="3" text="TWED"/>
+	    <Entry value="4" text="Frechet"/>
+	    <Entry value="5" text="L2"/>
+	</EnumerationDomain>
+	  <Documentation>
+	    Distance used between time-varying persistence diagrams.
+	  </Documentation>
+	</IntVectorProperty>
+
+
+      <DoubleVectorProperty
+          name="Delta"
+          label="Delta"
+          command="SetDelta"
+          number_of_elements="1"
+          default_values="1"
+          >
+        <Hints>
+          <PropertyWidgetDecorator type="GenericDecorator"
+                                   mode="visibility"
+                                   property="UseAdditionalPrecision"
+                                   value="1" />
+        </Hints>
+        <Documentation>
+          Delta value.
+        </Documentation>
+      </DoubleVectorProperty>
+
+<DoubleVectorProperty
+          name="Weight"
+          label="Weight"
+          command="SetWeight"
+          number_of_elements="1"
+          default_values="0"
+          >
+        <DoubleRangeDomain name="Weight" min="0.0" max="1.0"/>
+        <Documentation>
+          Weight of the temporal distance in the total distance between two persistence diagrams in the cost matrix.
+        </Documentation>
+      </DoubleVectorProperty>
+      
+      
+<DoubleVectorProperty
+          name="Beta"
+          label="Beta"
+          command="Setbeta"
+          number_of_elements="1"
+          default_values="1"
+          >
+        <DoubleRangeDomain name="Beta" min="0.0" max="1.0"/>
+        <Documentation>
+          Controls the penalty applied to CED-unmatched subdivisions.
+        </Documentation>
+      </DoubleVectorProperty>	
+
+      ${DEBUG_WIDGETS}
+
+      <Hints>
+        <ShowInMenu category="TTK - Ensemble Scalar Data" />
+      </Hints>
+    </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

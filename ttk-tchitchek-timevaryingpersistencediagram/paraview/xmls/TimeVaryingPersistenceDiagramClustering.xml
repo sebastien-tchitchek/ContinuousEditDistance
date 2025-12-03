@@ -1,0 +1,349 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy
+        name="ttkTimeVaryingPersistenceDiagramClustering"
+        class="ttkTimeVaryingPersistenceDiagramClustering"
+        label="TTK TimeVaryingPersistenceDiagramClustering">
+      <Documentation
+          long_help="Computes distance matrix between persistence diagrams."
+          shorthelp="Persistence Diagrams Distance Matrix.">
+        This filter computes a clustering between an input set of
+        time-varying persistence diagrams.
+
+        Related publication: "Continuous Edit Distance, Geodesics and Barycenters of Time-varying Persistence Diagrams"
+        Sebastien Tchitchek, Mohamed Kissi, Julien Tierny
+        IEEE Transactions on Visualization and Computer Graphics.
+      </Documentation>
+
+      <InputProperty
+          name="Input"
+          command="AddInputConnection"
+          clean_command="RemoveAllInputs"
+          multiple_input="1">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources" />
+          <Group name="filters" />
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkMultiBlockDataSet" />
+        </DataTypeDomain>
+        <InputArrayDomain name="input_scalars" number_of_components="1">
+          <Property name="Input" function="FieldDataSelection" />
+        </InputArrayDomain>
+        <Documentation>
+          Data-set to process.
+        </Documentation>
+      </InputProperty>
+
+	<StringVectorProperty 
+          name="TimestepColumnNames" 
+	  label="Time steps column name" 
+   	  animateable="0" 
+	  command="SetTimestepColumnName" 
+	  number_of_elements="1" 
+	  default_values="TimeStep">
+        <Documentation>Column that contain time steps of the persistence diagrams.</Documentation>
+        </StringVectorProperty>
+
+      <DoubleVectorProperty
+          name="Delta"
+          label="Delta"
+          command="Setdelta"
+          number_of_elements="1"
+          default_values="0.25">
+        <DoubleRangeDomain name="Delta" min="0.0" max="100.0" />
+        <Documentation>
+          Delta value (positive double value).
+        </Documentation>
+      </DoubleVectorProperty>
+      
+<DoubleVectorProperty
+          name="Beta"
+          label="Beta"
+          command="Setbeta"
+          number_of_elements="1"
+          default_values="1"
+          >
+        <DoubleRangeDomain name="Beta" min="0.0" max="1.0"/>
+        <Documentation>
+          Controls the penalty applied to CED-unmatched subdivisions (Only Taken into account for the Temporal/MDS representations, the parameter
+          remains at 1 for the computation of geodesics, barycenters and clustering).
+        </Documentation>
+      </DoubleVectorProperty>	
+
+      <IntVectorProperty
+          name="MDS"
+          label="MDS"
+          command="SetMDS"
+          number_of_elements="1"
+          default_values="0">
+        <EnumerationDomain name="enum">
+          <Entry value="0" text="Temporal Representation" />
+          <Entry value="1" text="Dimensionality Reduction" />
+        </EnumerationDomain>
+        <Documentation>
+          Choice of type of visual representation.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="Chronological Departure"
+          label="Chronological Departure"
+          command="SetwithChronologicalDeparture"
+          number_of_elements="1"
+          default_values="0">
+        <EnumerationDomain name="enum">
+          <Entry value="0" text="Without chronological departure" />
+          <Entry value="1" text="With chronological departure" />
+        </EnumerationDomain>
+        <Documentation>
+          If the temporal representation is chosen, set to 1 so that the abscissa of the points of the curves depends on their temporal coordinates.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <DoubleVectorProperty
+          name="Vertical Space"
+          label="Vertical Space"
+          command="SetverticalSpace"
+          number_of_elements="1"
+          default_values="5">
+        <DoubleRangeDomain name="Vertical Space" min="0.0" max="1000.0" />
+        <Documentation>
+          Vertical space separating the two TVPDs in the temporal representation (non-negative double value).
+        </Documentation>
+      </DoubleVectorProperty>
+
+      <IntVectorProperty
+          name="tau"
+          label="Tau parameter"
+          command="Settau"
+          number_of_elements="1"
+          default_values="1">
+        <Documentation>
+	  This positive integer parameter proportionally sets the maximum number of iterations performed by the stochastic or greedy barycenter-computation algorithms (int value).
+        </Documentation>
+      </IntVectorProperty>
+      
+      <DoubleVectorProperty
+          name="segmentation parameter"
+          label="Segmentation parameter"
+          command="SetgreedySegmentation"
+          number_of_elements="1"
+          default_values="2">
+        <Documentation>
+    	  This positive integer parameter proportionally controls the accuracy of the greedy barycenter-computation algorithm (int value).
+        </Documentation>
+      </DoubleVectorProperty>
+
+      <DoubleVectorProperty
+          name="Weight"
+          label="Weight"
+          command="SetWeight"
+          number_of_elements="1"
+          default_values="0">
+        <DoubleRangeDomain name="Weight" min="0.0" max="1.0" />
+        <Documentation>
+          Weight of the temporal distance between two persistence diagrams in the cost matrix (double value).
+        </Documentation>
+      </DoubleVectorProperty>
+
+      <DoubleVectorProperty
+          name="Geodesic Coefficient"
+          label="Geodesic Coefficient"
+          command="SetgeodesicCoefficient"
+          number_of_elements="1"
+          default_values="0.5">
+        <DoubleRangeDomain name="Geodesic Coefficient" min="0.0" max="1.0" />
+        <Documentation>
+          Coefficient where to place on the geodesic between two time varying persistence diagrams (double value).
+        </Documentation>
+      </DoubleVectorProperty>
+ 
+      <IntVectorProperty
+          name="Choice of method for k-means computation"
+          label="Choice of method for k-means computation"
+          command="SetmethodChoice"
+          number_of_elements="1"
+          default_values="0">
+        <EnumerationDomain name="enum">
+          <Entry value="0" text="stochastic gradient descent" />
+          <Entry value="1" text="greedy subgradient descent" />
+        </EnumerationDomain>
+        <Documentation>
+          Specify the method for k-means computation.
+        </Documentation>
+      </IntVectorProperty>
+ 
+      <DoubleVectorProperty
+          name="pas"
+          label="stochastic step parameter"
+          command="Setpas"
+          number_of_elements="1"
+          default_values="0.5">
+        <DoubleRangeDomain name="pas" min="0.0" max="1.0" />
+        <Documentation>
+          In the stochastic barycenter-computation method, this parameter selects the starting point along the geodesic from which the algorithm begins (positive double value).
+        </Documentation>
+      </DoubleVectorProperty>  
+      
+      <IntVectorProperty
+          name="numberOfDeparturesStochasticBarycenterComputation"
+          command="SetnumberOfDeparturesStochasticBarycenterComputation"
+          number_of_elements="1"
+          default_values="3">
+        <IntRangeDomain name="range" min="1" max="999" />
+        <Documentation>
+          Determine the maximum number of different starting points (drawn randomly) for the barycenter computation using the stochastic method within k-means.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="Number of clusters"
+          label="Number of clusters"
+          command="SetnumberOfClusters"
+          number_of_elements="1"
+          default_values="2">
+        <Documentation>
+          Number of clusters desired for the k-means (integer value between 1 and the number of input TVPDs minus one).
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="Kmeans iterations"
+          label="Kmeans iterations"
+          command="SetiterationsNumberKMeans"
+          number_of_elements="1"
+          default_values="5">
+        <Documentation>
+          Number of iterations for the k-means.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="k-means ++ computation"
+          label="k-means ++ computation"
+          command="SetkMeanPlusPlus"
+          number_of_elements="1"
+          default_values="0">
+        <EnumerationDomain name="enum">
+          <Entry value="0" text="use of classical kmeans " />
+          <Entry value="1" text="use of kmeans++" />
+        </EnumerationDomain>
+        <Documentation>
+          Specify the utilization of k-means++.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="stochastic criteria for the k-means"
+          label="stochastic criteria for the k-means"
+          command="Setcriteria"
+          number_of_elements="1"
+          default_values="0">
+        <EnumerationDomain name="enum">
+          <Entry value="0" text="non-use of a stopping criteria for the stochastic kmeans" />
+          <Entry value="1" text="use of a stopping criteria for the stochastic kmeans" />
+        </EnumerationDomain>
+        <Documentation>
+          Specify the utilization of a stopping criteria if the stochastic gradient descent is chosen.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="Geodesic Barycenter"
+          label="Geodesic Barycenter"
+          command="SetgeodesicForBarycenter"
+          number_of_elements="1"
+          default_values="0"
+          panel_visibility="advanced">
+        <EnumerationDomain name="enum">
+          <Entry value="0" text="Disabled" />
+          <Entry value="1" text="Enabled" />
+        </EnumerationDomain>
+        <Documentation>
+	If set to 1 and the number of input diagrams is 2, the barycenter is computed as the diagram located halfway along the geodesic between the two inputs, instead of using stochastic or greedy barycenter algorithms. By default, disabled to allow for a broader exploration of the solution space.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="Number of cores to use"
+          label="Number of cores to use"
+          command="SetselectedCoreCount"
+          number_of_elements="1"
+          default_values="999"
+          panel_visibility="advanced">
+        <Documentation>
+          Number of CPU cores to use for the computation.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="Number of iterations for the smoothing"
+          label="Number of iterations for the smoothing of the TVPDs"
+          command="SetiterationsNumberSmoothing"
+          number_of_elements="1"
+          default_values="1"
+          panel_visibility="advanced">
+        <Documentation>
+          Number of iterations to use for the smoothing of the TVPDS in the MDS representation.
+        </Documentation>
+      </IntVectorProperty>
+      
+      <IntVectorProperty
+          name="Anti skrink option for the smoothing"
+          label="Anti skrink option for the smoothing of the TVPDs"
+          command="SetantiShrink"
+          number_of_elements="1"
+          default_values="1"
+          panel_visibility="advanced">
+        <Documentation>
+          Anti skrink option for the smoothing of the TVPDS in the MDS representation. Set to 0 in order to not use the option.
+        </Documentation>
+      </IntVectorProperty>
+      
+      	<IntVectorProperty
+	name="Smooth method"
+	label="Smooth method"
+	command="SetsmoothChoice"
+	number_of_elements="1"
+	default_values="0">
+	<EnumerationDomain name="enum">
+	    <Entry value="0" text="TTKScalarFieldSmoother"/>
+	    <Entry value="1" text="Taubin"/>
+	    <Entry value="2" text="No smooth method"/>
+	</EnumerationDomain>
+	  <Documentation>
+	    Smooth method used on the TVPDs for the MDS representation.
+	  </Documentation>
+	</IntVectorProperty>
+	
+	<DoubleVectorProperty
+          name="Lambda Taubin Parameter"
+          label="Lambda Taubin Parameter"
+          command="SetlambdaTaubinParameter"
+          number_of_elements="1"
+          default_values="0.5"
+          >
+        <DoubleRangeDomain name="Beta" min="0.0" max="0.69"/>
+        <Documentation>
+          If the Taubin smoothing method is selectioned lambda controls smoothing strength. (Safe zone : 0.4-0.6)
+        </Documentation>
+      </DoubleVectorProperty>	
+      
+      ${DEBUG_WIDGETS}
+
+      <OutputPort name="Clustered Persistence Diagrams Time Series" index="0" id="port0" />
+      <OutputPort name="Cluster Centroids"                     index="1" id="port1" />
+      <OutputPort name="Matchings"                             index="2" id="port2" />
+      <OutputPort name="Wasserstein Distance Matrix"           index="3" id="port2" />
+      <OutputPort name="Euclidian Distance Matrix"             index="4" id="port2" />
+      <OutputPort name="Distorsion Matrix"                     index="5" id="port2" />
+      <OutputPort name="Geodesic 1"                            index="6" id="port2" />
+      <OutputPort name="Geodesic"                              index="7" id="port2" />
+
+      <Hints>
+        <ShowInMenu category="TTK - Ensemble Scalar Data" />
+      </Hints>
+    </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

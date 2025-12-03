@@ -1,0 +1,13 @@
+NAME
+  ttkTimeVaryingPersistenceDiagramClustering
+SOURCES
+  ttkTimeVaryingPersistenceDiagramClustering.cpp
+HEADERS
+  ttkTimeVaryingPersistenceDiagramClustering.h
+DEPENDS
+  timeVaryingTimeVaryingPersistenceDiagramClustering
+  ttkAlgorithm
+  ttkPersistenceDiagram
+  ttkDimensionReduction
+  ttkDataSetToTable
+  ttkGeometrySmoother
