@@ -1,9 +1,0 @@
-NAME
-  ttkUserInterfaceBase
-SOURCES
-  ttkUserInterfaceBase.cpp
-HEADERS
-  ttkUserInterfaceBase.h
-DEPENDS
-  ttkProgramBase
-  ttkTextureMapFromField

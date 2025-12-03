@@ -1,8 +1,0 @@
-NAME
-  ttkIdentifierRandomizer
-SOURCES
-  ttkIdentifierRandomizer.cpp
-HEADERS
-  ttkIdentifierRandomizer.h
-DEPENDS
-  ttkAlgorithm

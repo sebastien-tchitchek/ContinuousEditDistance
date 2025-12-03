@@ -1,8 +1,0 @@
-NAME
-  ttkPointSetToSurface
-SOURCES
-  ttkPointSetToSurface.cpp
-HEADERS
-  ttkPointSetToSurface.h
-DEPENDS
-  ttkAlgorithm

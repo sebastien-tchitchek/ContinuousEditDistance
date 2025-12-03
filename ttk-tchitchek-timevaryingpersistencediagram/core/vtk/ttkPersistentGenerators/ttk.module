@@ -1,9 +1,0 @@
-NAME
-  ttkPersistentGenerators
-SOURCES
-  ttkPersistentGenerators.cpp
-HEADERS
-  ttkPersistentGenerators.h
-DEPENDS
-  persistentGenerators
-  ttkAlgorithm

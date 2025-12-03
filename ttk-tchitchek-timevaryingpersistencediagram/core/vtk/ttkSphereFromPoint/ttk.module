@@ -1,8 +1,0 @@
-NAME
-  ttkSphereFromPoint
-SOURCES
-  ttkSphereFromPoint.cpp
-HEADERS
-  ttkSphereFromPoint.h
-DEPENDS
-  ttkAlgorithm

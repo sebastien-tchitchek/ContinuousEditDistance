@@ -1,8 +1,0 @@
-NAME
-  ttkIdentifyByScalarField
-SOURCES
-  ttkIdentifyByScalarField.cpp
-HEADERS
-  ttkIdentifyByScalarField.h
-DEPENDS
-  ttkAlgorithm

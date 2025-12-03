@@ -1,8 +1,0 @@
-NAME
-  ttkDataSetInterpolator
-SOURCES
-  ttkDataSetInterpolator.cpp
-HEADERS
-  ttkDataSetInterpolator.h
-DEPENDS
-  ttkAlgorithm

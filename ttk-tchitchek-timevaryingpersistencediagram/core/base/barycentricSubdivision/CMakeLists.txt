@@ -1,9 +1,0 @@
-ttk_add_base_library(barycentricSubdivision
-  SOURCES
-    BarycentricSubdivision.cpp
-  HEADERS
-    BarycentricSubdivision.h
-  DEPENDS
-    triangulation
-    geometry
-  )

@@ -1,9 +1,0 @@
-NAME
-  ttkMeshGraph
-SOURCES
-  ttkMeshGraph.cpp
-HEADERS
-  ttkMeshGraph.h
-DEPENDS
-  meshGraph
-  ttkAlgorithm

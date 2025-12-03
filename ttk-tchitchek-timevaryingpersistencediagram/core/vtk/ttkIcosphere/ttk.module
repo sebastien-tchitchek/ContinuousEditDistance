@@ -1,9 +1,0 @@
-NAME
-  ttkIcosphere
-SOURCES
-  ttkIcosphere.cpp
-HEADERS
-  ttkIcosphere.h
-DEPENDS
-  icosphere
-  ttkAlgorithm

@@ -1,9 +1,0 @@
-NAME
-  ttkMeshSubdivision
-SOURCES
-  ttkMeshSubdivision.cpp
-HEADERS
-  ttkMeshSubdivision.h
-DEPENDS
-  common
-  ttkAlgorithm

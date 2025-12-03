@@ -1,8 +1,0 @@
-NAME
-  ttkOFFWriter
-SOURCES
-  ttkOFFWriter.cpp
-HEADERS
-  ttkOFFWriter.h
-DEPENDS
-  common

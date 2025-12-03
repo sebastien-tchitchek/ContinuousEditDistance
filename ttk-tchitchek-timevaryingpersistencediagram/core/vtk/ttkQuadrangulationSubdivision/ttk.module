@@ -1,9 +1,0 @@
-NAME
-  ttkQuadrangulationSubdivision
-SOURCES
-  ttkQuadrangulationSubdivision.cpp
-HEADERS
-  ttkQuadrangulationSubdivision.h
-DEPENDS
-  quadrangulationSubdivision
-  ttkAlgorithm

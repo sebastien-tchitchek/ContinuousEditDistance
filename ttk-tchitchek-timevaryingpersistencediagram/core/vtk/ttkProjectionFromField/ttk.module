@@ -1,9 +1,0 @@
-NAME
-  ttkProjectionFromField
-SOURCES
-  ttkProjectionFromField.cpp
-HEADERS
-  ttkProjectionFromField.h
-DEPENDS
-  ttkAlgorithm
-  ttkPersistenceDiagram

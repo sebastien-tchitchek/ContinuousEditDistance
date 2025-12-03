@@ -1,8 +1,0 @@
-NAME
-  ttkPersistenceDiagramApproximation
-SOURCES
-  ttkPersistenceDiagramApproximation.cpp
-HEADERS
-  ttkPersistenceDiagramApproximation.h
-DEPENDS
-  ttkPersistenceDiagram

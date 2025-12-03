@@ -1,9 +1,0 @@
-ttk_add_base_library(projectionFromTable
-  SOURCES
-    ProjectionFromTable.cpp
-  HEADERS
-    ProjectionFromTable.h
-  DEPENDS
-    triangulation
-    geometry
-)

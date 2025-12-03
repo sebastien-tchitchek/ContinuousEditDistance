@@ -1,8 +1,0 @@
-NAME
-  ttkIcosphereFromObject
-SOURCES
-  ttkIcosphereFromObject.cpp
-HEADERS
-  ttkIcosphereFromObject.h
-DEPENDS
-  ttkIcosphere

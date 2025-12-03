@@ -1,9 +1,0 @@
-ttk_add_base_library(identifiers
-  SOURCES
-    Identifiers.cpp
-  HEADERS
-    Identifiers.h
-  DEPENDS
-    triangulation
-    kdTree
-)

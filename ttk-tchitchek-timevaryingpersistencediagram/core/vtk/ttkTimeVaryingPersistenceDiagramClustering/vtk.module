@@ -1,8 +1,0 @@
-NAME
- ttkTimeVaryingPersistenceDiagramClustering
-DEPENDS
- ttkAlgorithm
- ttkDimensionReduction
- ttkDataSetToTable
- ttkPersistenceDiagram
- ttkGeometrySmoother

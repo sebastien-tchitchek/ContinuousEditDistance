@@ -1,9 +1,0 @@
-ttk_add_base_library(manifoldCheck
-  SOURCES
-    ManifoldCheck.cpp
-  HEADERS
-    ManifoldCheck.h
-  DEPENDS
-    triangulation
-    unionFind
-    )

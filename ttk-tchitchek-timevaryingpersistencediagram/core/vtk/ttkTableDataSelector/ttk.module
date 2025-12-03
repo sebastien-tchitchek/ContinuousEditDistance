@@ -1,8 +1,0 @@
-NAME
-  ttkTableDataSelector
-SOURCES
-  ttkTableDataSelector.cpp
-HEADERS
-  ttkTableDataSelector.h
-DEPENDS
-  ttkAlgorithm

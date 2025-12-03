@@ -1,8 +1,0 @@
-NAME
-  ttkStableManifoldPersistence
-SOURCES
-  ttkStableManifoldPersistence.cpp
-HEADERS
-  ttkStableManifoldPersistence.h
-DEPENDS
-  ttkAlgorithm

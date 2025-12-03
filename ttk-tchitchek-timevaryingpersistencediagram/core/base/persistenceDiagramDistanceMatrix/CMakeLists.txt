@@ -1,9 +1,0 @@
-ttk_add_base_library(persistenceDiagramDistanceMatrix
-  SOURCES
-    PersistenceDiagramDistanceMatrix.cpp
-  HEADERS
-    PersistenceDiagramDistanceMatrix.h
-  DEPENDS
-    common
-    persistenceDiagramAuction
-  )

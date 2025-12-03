@@ -1,8 +1,0 @@
-NAME
-  ttkIcospheresFromPoints
-SOURCES
-  ttkIcospheresFromPoints.cpp
-HEADERS
-  ttkIcospheresFromPoints.h
-DEPENDS
-  ttkIcosphere

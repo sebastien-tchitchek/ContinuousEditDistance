@@ -1,8 +1,0 @@
-NAME
-  ttkComponentSize
-SOURCES
-  ttkComponentSize.cpp
-HEADERS
-  ttkComponentSize.h
-DEPENDS
-  ttkAlgorithm

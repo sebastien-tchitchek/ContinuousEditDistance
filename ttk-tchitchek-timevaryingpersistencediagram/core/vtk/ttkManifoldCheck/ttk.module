@@ -1,9 +1,0 @@
-NAME
-  ttkManifoldCheck
-SOURCES
-  ttkManifoldCheck.cpp
-HEADERS
-  ttkManifoldCheck.h
-DEPENDS
-  manifoldCheck
-  ttkAlgorithm

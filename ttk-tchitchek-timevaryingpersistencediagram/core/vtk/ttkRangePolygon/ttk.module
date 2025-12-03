@@ -1,9 +1,0 @@
-NAME
-  ttkRangePolygon
-SOURCES
-  ttkRangePolygon.cpp
-HEADERS
-  ttkRangePolygon.h
-DEPENDS
-  scalarFieldSmoother
-  ttkAlgorithm

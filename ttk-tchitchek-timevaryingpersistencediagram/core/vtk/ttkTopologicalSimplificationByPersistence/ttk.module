@@ -1,9 +1,0 @@
-NAME
-  ttkTopologicalSimplificationByPersistence
-SOURCES
-  ttkTopologicalSimplificationByPersistence.cpp
-HEADERS
-  ttkTopologicalSimplificationByPersistence.h
-DEPENDS
-  localizedTopologicalSimplification
-  ttkAlgorithm

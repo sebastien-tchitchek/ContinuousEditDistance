@@ -1,8 +1,0 @@
-NAME
-  ttkExtract
-SOURCES
-  ttkExtract.cpp
-HEADERS
-  ttkExtract.h
-DEPENDS
-  ttkAlgorithm

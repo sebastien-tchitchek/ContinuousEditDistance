@@ -1,9 +1,0 @@
-NAME
-  ttkIdentifiers
-SOURCES
-  ttkIdentifiers.cpp
-HEADERS
-  ttkIdentifiers.h
-DEPENDS
-  ttkAlgorithm
-  identifiers

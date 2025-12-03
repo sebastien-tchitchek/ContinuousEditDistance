@@ -1,8 +1,0 @@
-NAME
-  ttkMatrixToHeatMap
-SOURCES
-  ttkMatrixToHeatMap.cpp
-HEADERS
-  ttkMatrixToHeatMap.h
-DEPENDS
-  ttkAlgorithm

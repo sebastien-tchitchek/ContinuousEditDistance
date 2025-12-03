@@ -1,8 +1,0 @@
-NAME
-  ttkCinemaReader
-SOURCES
-  ttkCinemaReader.cpp
-HEADERS
-  ttkCinemaReader.h
-DEPENDS
-  ttkAlgorithm

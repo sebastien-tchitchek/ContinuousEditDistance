@@ -1,8 +1,0 @@
-NAME
-  ttkCinemaProductReader
-DEPENDS
-  ttkAlgorithm
-  ttkTopologicalCompressionReader
-  VTK::IOImage
-  VTK::IOLegacy
-  VTK::IOXML

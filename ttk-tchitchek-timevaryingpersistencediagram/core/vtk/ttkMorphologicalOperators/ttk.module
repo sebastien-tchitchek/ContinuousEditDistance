@@ -1,9 +1,0 @@
-NAME
-  ttkMorphologicalOperators
-SOURCES
-  ttkMorphologicalOperators.cpp
-HEADERS
-  ttkMorphologicalOperators.h
-DEPENDS
-  morphologicalOperators
-  ttkAlgorithm

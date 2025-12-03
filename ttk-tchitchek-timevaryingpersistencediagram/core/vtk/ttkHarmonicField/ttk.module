@@ -1,9 +1,0 @@
-NAME
-  ttkHarmonicField
-SOURCES
-  ttkHarmonicField.cpp
-HEADERS
-  ttkHarmonicField.h
-DEPENDS
-  harmonicField
-  ttkAlgorithm

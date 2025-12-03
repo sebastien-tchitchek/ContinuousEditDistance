@@ -1,8 +1,0 @@
-NAME
-  ttkEndFor
-SOURCES
-  ttkEndFor.cpp
-HEADERS
-  ttkEndFor.h
-DEPENDS
-  ttkAlgorithm

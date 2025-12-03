@@ -1,6 +1,0 @@
-NAME
- ttkContourForests
-DEPENDS
- ttkAlgorithm
-PRIVATE_DEPENDS
-  VTK::FiltersSources

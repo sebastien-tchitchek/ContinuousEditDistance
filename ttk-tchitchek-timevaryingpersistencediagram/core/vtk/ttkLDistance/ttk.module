@@ -1,9 +1,0 @@
-NAME
-  ttkLDistance
-SOURCES
-  ttkLDistance.cpp
-HEADERS
-  ttkLDistance.h
-DEPENDS
-  lDistance
-  ttkAlgorithm

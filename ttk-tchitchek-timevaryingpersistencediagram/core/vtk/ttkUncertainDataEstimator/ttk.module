@@ -1,9 +1,0 @@
-NAME
-  ttkUncertainDataEstimator
-SOURCES
-  ttkUncertainDataEstimator.cpp
-HEADERS
-  ttkUncertainDataEstimator.h
-DEPENDS
-  uncertainDataEstimator
-  ttkAlgorithm

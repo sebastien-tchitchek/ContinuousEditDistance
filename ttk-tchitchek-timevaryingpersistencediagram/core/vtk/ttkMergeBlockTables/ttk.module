@@ -1,8 +1,0 @@
-NAME
-  ttkMergeBlockTables
-SOURCES
-  ttkMergeBlockTables.cpp
-HEADERS
-  ttkMergeBlockTables.h
-DEPENDS
-  ttkAlgorithm

@@ -1,9 +1,0 @@
-ttk_add_base_library(contourTree
-  SOURCES
-    ContourTree.cpp
-  HEADERS
-    ContourTree.h
-  DEPENDS
-    unionFind
-    triangulation
-    )

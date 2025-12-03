@@ -1,9 +1,0 @@
-NAME
-  ttkMorseSmaleQuadrangulation
-SOURCES
-  ttkMorseSmaleQuadrangulation.cpp
-HEADERS
-  ttkMorseSmaleQuadrangulation.h
-DEPENDS
-  morseSmaleQuadrangulation
-  ttkAlgorithm
