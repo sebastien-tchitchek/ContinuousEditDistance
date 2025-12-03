@@ -14,12 +14,6 @@ chmod +x install.sh
 . ./install.sh
 ```
 
-and then  
-```
-source ~/.bashrc
-```
-to apply the changes.
-
 At this point, you can launch paraview from the command line with 
 
 ```

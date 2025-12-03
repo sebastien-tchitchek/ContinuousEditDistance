@@ -67,5 +67,7 @@ echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib' >> ~/.bashrc
 echo 'export PV_PLUGIN_PATH=${PV_PLUGIN_PATH}:/usr/local/bin/plugins/' >> ~/.bashrc
 echo 'export PYTHONPATH=${PYTHONPATH}:/usr/local/lib/python3.8/site-packages/' >> ~/.bashrc
 
+source ~/.bashrc
+
 echo
 echo "Installation complete."
