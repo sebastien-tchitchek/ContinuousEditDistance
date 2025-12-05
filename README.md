@@ -57,6 +57,4 @@ Once the installation is finished, you can launch ParaView with:
 paraview
 ```
 
-ParaView should then load with the TTK plugins and the custom CED filter available.
-
-
+ParaView should then load with the TTK plugins and all custom CED-related filters (from the `ttk-tchitchek` snapshot) available.
