@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+TTK_DEB_PACKAGES="$(dpkg -l | awk '/^ii/ && $2 ~ /^ttk/ {print $2}')"
+
+if [ -n "$TTK_DEB_PACKAGES" ]; then
+  echo "Removing previously installed TTK .deb packages: $TTK_DEB_PACKAGES"
+  sudo apt-get remove --purge -y $TTK_DEB_PACKAGES
+  sudo apt-get autoremove --purge -y
+else
+  echo "No TTK .deb packages found, skipping removal step."
+fi
+
 sudo apt update
 
 sudo apt-get install -y cmake-qt-gui libboost-system-dev libpython3.8-dev libxt-dev libxcursor-dev libopengl-dev
