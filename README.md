@@ -19,3 +19,19 @@ At this point, you can launch paraview from the command line with
 ```
 paraview
 ```
+
+### 2. Generate VESTEC space-weather data
+
+This step reproduces the in-situ space-weather pipeline from the VESTEC WP3 demonstrator (branch `demonstrator_D.3.3`).  
+It will:
+
+- clone the `vestec-wp3` repository (fork under `sebastien-tchitchek`),
+- build the `ipicmini` simulator in `demonstrator/space_weather_in-situ`,
+- run the 4 space-weather simulations,
+- compute persistence diagrams in-situ at each time step and store them in Cinema databases.
+
+From the root of this repository, run:
+
+```bash
+chmod +x generation_vestec_data.sh
+./generation_vestec_data.sh
