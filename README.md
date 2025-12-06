@@ -4,6 +4,17 @@ This repository contains the code used for the manuscript **“Continuous Edit D
 
 All scripts below were tested on a fresh installation of **Ubuntu 20.04** in a VirtualBox VM.
 
+> **Shortcut (precomputed data).**  
+> If desired, this repository already provides the four time-varying persistence diagrams (TVPDs), based on the precomputed VESTEC space-weather data, used in the paper:
+>
+> - four TVPDs used in the experiments:  
+>   `data/002.cdb`, `data/004.cdb`, `data/1952.cdb`, `data/1954.cdb`
+>
+> If you are only interested in reproducing the **CED experiment** (Section 4 below), you may **skip Steps 1 and 3** and proceed directly by:
+>
+> 1. running **Step 2 (CED environment installation)**, and  
+> 2. following the instructions given in **Step 4**.
+
 ---
 
 ## 1. Generate VESTEC space-weather data
@@ -26,6 +37,9 @@ chmod +x generation_vestec_data.sh
 ```
 
 After this step, the VESTEC space-weather simulations and their corresponding persistence diagrams are available in the `vestec-wp3/demonstrator/space_weather_in-situ` directory.
+
+> **Note.**
+> This step is **optional** if you are satisfied with the precomputed TVPDs data already provided in this repository.
 
 ---
 
@@ -68,4 +82,15 @@ chmod +x separate_vestec_data.sh
 ./separate_vestec_data.sh
 ````
 
-This script sequentially runs the ParaView/TTK Python traces (`002.py`, `004.py`, `1952.py`, `1954.py`) and splits the VESTEC space-weather dataset into the four time-varying persistence diagrams (TVPDs) used and described in the manuscript. Also, persistence diagrams in the old TTK 0.9.9 format are adapted to the newer TTK 1.2 format. The resulting Cinema databases are written into the `data/` directory.
+This script sequentially runs the ParaView/TTK Python traces (`002.py`, `004.py`, `1952.py`, `1954.py`) and splits the VESTEC space-weather dataset into the four time-varying persistence diagrams (TVPDs) used and described in the manuscript. It also converts persistence diagrams from the legacy TTK 0.9.9 format to the newer TTK 1.2 format. 
+
+The resulting Cinema databases are written into the `data/` directory:
+
+* `data/002.cdb`
+* `data/004.cdb`
+* `data/1952.cdb`
+* `data/1954.cdb`
+
+> **Note.**
+> These four TVPDs are **already provided** in the repository.
+> If you do not need to recompute them, you may skip this step and directly use the precomputed `*.cdb` files in `data/` for the CED experiments (step 4).
