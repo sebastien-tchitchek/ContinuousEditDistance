@@ -99,8 +99,7 @@ The resulting Cinema databases are written into the `data/` directory:
 
 ## 4. CED experiment (Figure 11)
 
-This step reproduces a CED-based clustering experiment reported in **Figure 11** of the manuscript
-**“Continuous Edit Distance, Geodesics and Barycenters of Time-varying Persistence Diagrams”**.
+This step reproduces the CED-based clustering experiment on the VESTEC TVPD dataset, documented in **Figure 11** of the manuscript **“Continuous Edit Distance, Geodesics and Barycenters of Time-varying Persistence Diagrams”**.
 
 Prerequisites:
 
@@ -114,4 +113,4 @@ From the root of this repository, run:
 paraview vestec_CED_clustering.pvsm
 ```
 
-This command launches ParaView and loads the state file `vestec_CED_clustering.pvsm`, which opens the four TVPD Cinema databases from the `data/` directory, applies the Continuous Edit Distance pipeline and clustering configuration used in the paper, and reproduces Figure 11.
+This command launches ParaView and loads the state file `vestec_CED_clustering.pvsm`, which opens the four TVPD Cinema databases from the `data/` directory, applies the CED-based clustering configuration used in the paper, and reproduces Figure 11.
