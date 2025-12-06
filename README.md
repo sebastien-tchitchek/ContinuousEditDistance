@@ -58,3 +58,14 @@ paraview
 ```
 
 ParaView should then load with the TTK plugins and all custom CED-related filters (from the `ttk-tchitchek` snapshot) available.
+
+## 3. Generate VESTEC space-weather TVPDs
+
+From the root of this repository, run:
+
+```bash
+chmod +x separate_vestec_data.sh
+./separate_vestec_data.sh
+````
+
+This script sequentially runs the ParaView/TTK Python traces (`002.py`, `004.py`, `1952.py`, `1954.py`) and splits the VESTEC space-weather dataset into the four time-varying persistence diagrams (TVPDs) used and described in the manuscript. The resulting Cinema databases are written into the `data/` directory.
