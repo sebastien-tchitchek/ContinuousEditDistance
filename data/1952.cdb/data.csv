@@ -1,4 +1,4 @@
-CaseName,Step,B0x,B0y,B0z,ns,__CatalystChannel__,TimeStep,ScalarField,FILE
+CaseName,TimeStep,B0x,B0y,B0z,ns,__CatalystChannel__,TimeValue,ScalarField,FILE
 GEM,1850,0.0195,0,0.0195,2,particles,462.5,mag(B),data/GEM_1850_0.0195_0_0.0195_2_particles_462.5_mag(B).vtu
 GEM,1851,0.0195,0,0.0195,2,particles,462.75,mag(B),data/GEM_1851_0.0195_0_0.0195_2_particles_462.75_mag(B).vtu
 GEM,1852,0.0195,0,0.0195,2,particles,463,mag(B),data/GEM_1852_0.0195_0_0.0195_2_particles_463_mag(B).vtu
