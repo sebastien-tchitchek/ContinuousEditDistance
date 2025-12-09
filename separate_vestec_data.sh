@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Always run from the directory where this script lives
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${SCRIPT_DIR}"
+
+if [ -d "./data" ]; then
+  echo "Cleaning ./data/ directory (previous TVPDs)..."
+  rm -rf ./data/*
+fi
 
 PV_PYTHON="./ttk-paraview/build/bin/pvpython"
 
