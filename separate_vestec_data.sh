@@ -11,6 +11,11 @@ fi
 
 PV_PYTHON="./ttk-paraview/build/bin/pvpython"
 
+if [ ! -x "${PV_PYTHON}" ]; then
+  echo "Error: pvpython not found or not executable at: ${PV_PYTHON}" >&2
+  exit 1
+fi
+
 echo "Running 002.py..."
 "${PV_PYTHON}" 002.py
 
